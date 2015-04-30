@@ -12,7 +12,9 @@
         require.config({
             paths: {
                 jquery: '../bower_components/jquery/dist/jquery.min',
-                mustache: '../bower_components/mustache/mustache.min'
+                mustache: '../bower_components/mustache/mustache.min',
+                machina: '../bower_components/machina/lib/machina.min',
+                lodash: '../bower_components/lodash/lodash.min',
             },
             shim: {
                 'jquery': {
@@ -28,22 +30,18 @@
 
 <div class="row col-lg-12 col-md-12 col-sm-12 jumbotron">
     <h1>Hello, I'm Heri</h1>
+
     <h3>Please enter a command below</h3>
 </div>
 <div class="col-lg-5 col-md-4 col-sm-5">
     <form onsubmit="return false;">
-        <input placeholder="type a command">
-        <button type="submit" id="processCommand">Go</button>
+        <input class="form-control" placeholder="type a command">
+      <br>
+        <button class="btn btn-default" type="submit" id="processCommand">Go</button>
     </form>
 </div>
 <div class="col-lg-5 col-md-8 col-sm-7 jumbotron">
     <h2 id="response">
-        <div class="row col-lg-12 bubble">
-            test
-        </div>
-        <div class="row col-lg-12 bubble">
-            test 2
-        </div>
     </h2>
 </div>
 <script>

@@ -1,66 +1,72 @@
 
 
 define(function(require){
-var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,3],$V1=[1,4],$V2=[1,5],$V3=[1,6],$V4=[1,7],$V5=[1,8],$V6=[1,10],$V7=[1,11],$V8=[1,12],$V9=[1,13],$Va=[1,14],$Vb=[1,15],$Vc=[1,16],$Vd=[5,6,8,9,10,11,12,13,15],$Ve=[5,6,8,15],$Vf=[5,6,8,9,10,15];
+var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,3],$V1=[1,4],$V2=[1,5],$V3=[1,6],$V4=[1,7],$V5=[1,8],$V6=[1,9],$V7=[1,10],$V8=[1,12],$V9=[1,13],$Va=[1,14],$Vb=[1,15],$Vc=[1,16],$Vd=[1,17],$Ve=[1,18],$Vf=[5,6,13,14,15,16,17,18,20],$Vg=[5,6,13,20],$Vh=[5,6,13,14,15,20];
 var parser = {trace: function trace() { },
 yy: {},
-symbols_: {"error":2,"expressions":3,"e":4,"EOF":5,"+":6,"GREETING":7,"-":8,"*":9,"/":10,"^":11,"!":12,"%":13,"(":14,")":15,"NUMBER":16,"E":17,"PI":18,"$accept":0,"$end":1},
-terminals_: {2:"error",5:"EOF",6:"+",7:"GREETING",8:"-",9:"*",10:"/",11:"^",12:"!",13:"%",14:"(",15:")",16:"NUMBER",17:"E",18:"PI"},
-productions_: [0,[3,2],[4,3],[4,1],[4,3],[4,3],[4,3],[4,3],[4,2],[4,2],[4,2],[4,3],[4,1],[4,1],[4,1]],
+symbols_: {"error":2,"expressions":3,"e":4,"EOF":5,"+":6,"GREETING":7,"QUESTION":8,"PTO":9,"WHO":10,"NAME":11,"ANYWORD":12,"-":13,"*":14,"/":15,"^":16,"!":17,"%":18,"(":19,")":20,"NUMBER":21,"E":22,"PI":23,"$accept":0,"$end":1},
+terminals_: {2:"error",5:"EOF",6:"+",7:"GREETING",8:"QUESTION",9:"PTO",10:"WHO",11:"NAME",12:"ANYWORD",13:"-",14:"*",15:"/",16:"^",17:"!",18:"%",19:"(",20:")",21:"NUMBER",22:"E",23:"PI"},
+productions_: [0,[3,2],[4,3],[4,1],[4,3],[4,2],[4,3],[4,3],[4,3],[4,3],[4,2],[4,2],[4,2],[4,3],[4,1],[4,1],[4,1]],
 performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
 /* this == yyval */
 
 var $0 = $$.length - 1;
 switch (yystate) {
 case 1:
- console.log($$[$0-1]);
+
           return $$[$0-1]; 
 break;
 case 2:
 this.$ = $$[$0-2]+$$[$0];
 break;
 case 3:
-this.$ = 'hello dude'
+this.$ = 'greetings';
 break;
 case 4:
-this.$ = $$[$0-2]-$$[$0];
+this.$ = 'getPTO'
 break;
 case 5:
-this.$ = $$[$0-2]*$$[$0];
+this.$ = (function(name){ return 'getName,' + name; })($$[$0])
 break;
 case 6:
-this.$ = $$[$0-2]/$$[$0];
+this.$ = $$[$0-2]-$$[$0];
 break;
 case 7:
-this.$ = Math.pow($$[$0-2], $$[$0]);
+this.$ = $$[$0-2]*$$[$0];
 break;
 case 8:
+this.$ = $$[$0-2]/$$[$0];
+break;
+case 9:
+this.$ = Math.pow($$[$0-2], $$[$0]);
+break;
+case 10:
 
           this.$ = (function fact (n) { return n==0 ? 1 : fact(n-1) * n })($$[$0-1]);
         
 break;
-case 9:
+case 11:
 this.$ = $$[$0-1]/100;
 break;
-case 10:
+case 12:
 this.$ = -$$[$0];
 break;
-case 11:
+case 13:
 this.$ = $$[$0-1];
 break;
-case 12:
+case 14:
 this.$ = Number(yytext);
 break;
-case 13:
+case 15:
 this.$ = Math.E;
 break;
-case 14:
+case 16:
 this.$ = Math.PI;
 break;
 }
 },
-table: [{3:1,4:2,7:$V0,8:$V1,14:$V2,16:$V3,17:$V4,18:$V5},{1:[3]},{5:[1,9],6:$V6,8:$V7,9:$V8,10:$V9,11:$Va,12:$Vb,13:$Vc},o($Vd,[2,3]),{4:17,7:$V0,8:$V1,14:$V2,16:$V3,17:$V4,18:$V5},{4:18,7:$V0,8:$V1,14:$V2,16:$V3,17:$V4,18:$V5},o($Vd,[2,12]),o($Vd,[2,13]),o($Vd,[2,14]),{1:[2,1]},{4:19,7:$V0,8:$V1,14:$V2,16:$V3,17:$V4,18:$V5},{4:20,7:$V0,8:$V1,14:$V2,16:$V3,17:$V4,18:$V5},{4:21,7:$V0,8:$V1,14:$V2,16:$V3,17:$V4,18:$V5},{4:22,7:$V0,8:$V1,14:$V2,16:$V3,17:$V4,18:$V5},{4:23,7:$V0,8:$V1,14:$V2,16:$V3,17:$V4,18:$V5},o($Vd,[2,8]),o($Vd,[2,9]),o($Vd,[2,10]),{6:$V6,8:$V7,9:$V8,10:$V9,11:$Va,12:$Vb,13:$Vc,15:[1,24]},o($Ve,[2,2],{9:$V8,10:$V9,11:$Va,12:$Vb,13:$Vc}),o($Ve,[2,4],{9:$V8,10:$V9,11:$Va,12:$Vb,13:$Vc}),o($Vf,[2,5],{11:$Va,12:$Vb,13:$Vc}),o($Vf,[2,6],{11:$Va,12:$Vb,13:$Vc}),o([5,6,8,9,10,11,15],[2,7],{12:$Vb,13:$Vc}),o($Vd,[2,11])],
-defaultActions: {9:[2,1]},
+table: [{3:1,4:2,7:$V0,8:$V1,11:$V2,13:$V3,19:$V4,21:$V5,22:$V6,23:$V7},{1:[3]},{5:[1,11],6:$V8,13:$V9,14:$Va,15:$Vb,16:$Vc,17:$Vd,18:$Ve},o($Vf,[2,3]),{9:[1,19]},{12:[1,20]},{4:21,7:$V0,8:$V1,11:$V2,13:$V3,19:$V4,21:$V5,22:$V6,23:$V7},{4:22,7:$V0,8:$V1,11:$V2,13:$V3,19:$V4,21:$V5,22:$V6,23:$V7},o($Vf,[2,14]),o($Vf,[2,15]),o($Vf,[2,16]),{1:[2,1]},{4:23,7:$V0,8:$V1,11:$V2,13:$V3,19:$V4,21:$V5,22:$V6,23:$V7},{4:24,7:$V0,8:$V1,11:$V2,13:$V3,19:$V4,21:$V5,22:$V6,23:$V7},{4:25,7:$V0,8:$V1,11:$V2,13:$V3,19:$V4,21:$V5,22:$V6,23:$V7},{4:26,7:$V0,8:$V1,11:$V2,13:$V3,19:$V4,21:$V5,22:$V6,23:$V7},{4:27,7:$V0,8:$V1,11:$V2,13:$V3,19:$V4,21:$V5,22:$V6,23:$V7},o($Vf,[2,10]),o($Vf,[2,11]),{10:[1,28]},o($Vf,[2,5]),o($Vf,[2,12]),{6:$V8,13:$V9,14:$Va,15:$Vb,16:$Vc,17:$Vd,18:$Ve,20:[1,29]},o($Vg,[2,2],{14:$Va,15:$Vb,16:$Vc,17:$Vd,18:$Ve}),o($Vg,[2,6],{14:$Va,15:$Vb,16:$Vc,17:$Vd,18:$Ve}),o($Vh,[2,7],{16:$Vc,17:$Vd,18:$Ve}),o($Vh,[2,8],{16:$Vc,17:$Vd,18:$Ve}),o([5,6,13,14,15,16,20],[2,9],{17:$Vd,18:$Ve}),o($Vf,[2,4]),o($Vf,[2,13])],
+defaultActions: {11:[2,1]},
 parseError: function parseError(str, hash) {
     if (hash.recoverable) {
         this.trace(str);
@@ -536,40 +542,56 @@ var YYSTATE=YY_START;
 switch($avoiding_name_collisions) {
 case 0:/* skip whitespace */
 break;
-case 1:return 16
+case 1:return 21
 break;
 case 2:return 7
 break;
-case 3:return 9
+case 3:return 8
 break;
-case 4:return 10
+case 4:return 9
 break;
-case 5:return 8
+case 5:return 9
 break;
-case 6:return 6
+case 6:return 10
 break;
-case 7:return 11
+case 7:return 10
 break;
-case 8:return 12
+case 8:return 'SUP'
 break;
-case 9:return 13
+case 9:return 11
 break;
-case 10:return 14
+case 10:return 12
 break;
-case 11:return 15
+case 11:return 14
 break;
-case 12:return 18
+case 12:return 15
 break;
-case 13:return 17
+case 13:return 13
 break;
-case 14:return 5
+case 14:return 6
 break;
-case 15:return 'INVALID'
+case 15:return 16
+break;
+case 16:return 17
+break;
+case 17:return 18
+break;
+case 18:return 19
+break;
+case 19:return 20
+break;
+case 20:return 23
+break;
+case 21:return 22
+break;
+case 22:return 5
+break;
+case 23:return 'INVALID'
 break;
 }
 },
-rules: [/^(?:\s+)/,/^(?:[0-9]+(\.[0-9]+)?\b)/,/^(?:hey heri\b)/,/^(?:\*)/,/^(?:\/)/,/^(?:-)/,/^(?:\+)/,/^(?:\^)/,/^(?:!)/,/^(?:%)/,/^(?:\()/,/^(?:\))/,/^(?:PI\b)/,/^(?:E\b)/,/^(?:$)/,/^(?:.)/],
-conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],"inclusive":true}}
+rules: [/^(?:\s+)/,/^(?:[0-9]+(\.[0-9]+)?\b)/,/^(?:hey heri\b)/,/^(?:how much\b)/,/^(?:pto\b)/,/^(?:PTO\b)/,/^(?:do I have\b)/,/^(?:do i have\b)/,/^(?:sup\b)/,/^(?:my name is\b)/,/^(?:\w+)/,/^(?:\*)/,/^(?:\/)/,/^(?:-)/,/^(?:\+)/,/^(?:\^)/,/^(?:!)/,/^(?:%)/,/^(?:\()/,/^(?:\))/,/^(?:PI\b)/,/^(?:E\b)/,/^(?:$)/,/^(?:.)/],
+conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23],"inclusive":true}}
 });
 return lexer;
 })();

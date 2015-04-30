@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+
+    <script rel="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script rel="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
+    <script>
+        require.config({
+            paths: {
+                jquery: '../bower_components/jquery/dist/jquery.min',
+                mustache: '../bower_components/mustache/mustache.min'
+            },
+            shim: {
+                'jquery': {
+                    init: function () {
+                        window.$ = jQuery;
+                    }
+                }
+            }
+        })
+    </script>
+</head>
+<body class='container'>
+
+<div class="row col-lg-12 col-md-12 col-sm-12 jumbotron">
+    <h1>Hello, I'm Heri</h1>
+    <h3>Please enter a command below</h3>
+</div>
+<div class="col-lg-5 col-md-4 col-sm-5">
+    <form onsubmit="return false;">
+        <input placeholder="type a command">
+        <button type="submit" id="processCommand">Go</button>
+    </form>
+</div>
+<div class="col-lg-5 col-md-8 col-sm-7 jumbotron">
+    <h2 id="response">
+        <div class="row col-lg-12 bubble">
+            test
+        </div>
+        <div class="row col-lg-12 bubble">
+            test 2
+        </div>
+    </h2>
+</div>
+<script>
+    require(['main'], function (app) {
+        app.start();
+    });
+</script>
+</body>
+
+</html>

@@ -31,18 +31,26 @@
 <div class="row col-lg-12 col-md-12 col-sm-12 jumbotron">
     <h1>Hello, I'm Heri</h1>
 
-    <h3>Please enter a command below</h3>
+    <h3>Your HR Virtual Assistant</h3>
 </div>
 <div class="col-lg-5 col-md-4 col-sm-5">
     <form onsubmit="return false;">
-        <input class="form-control" placeholder="type a command">
-      <br>
+        <input id="commandline" class="form-control" placeholder="type a command">
+        <br>
         <button class="btn btn-default" type="submit" id="processCommand">Go</button>
     </form>
 </div>
-<div class="col-lg-5 col-md-8 col-sm-7 jumbotron">
-    <h2 id="response">
-    </h2>
+<div class="col-lg-5 col-md-8 col-sm-7">
+    <div class="row">
+        <button id="listen" class="btn btn-default">Listen</button>
+        <button id="speak" class="btn btn-default">Speak up</button>
+    </div>
+    <div class="row">
+        <div class="jumbotron">
+            <h2 id="response">
+            </h2>
+        </div>
+    </div>
 </div>
 <script>
     require(['main'], function (app) {
